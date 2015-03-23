@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'App\Console\Commands\Inspire',
+    'App\Console\Commands\Phonecall',
 	];
 
 	/**
@@ -22,8 +23,8 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected function schedule(Schedule $schedule)
 	{
-		$schedule->command('inspire')
-				 ->hourly();
+		$schedule->command('phonecall')
+				 ->cron('0 */4 * * *'); #->cron('2 */4 * * *');
 	}
 
 }
